@@ -3,19 +3,13 @@ import Image from "next/image"
 
 export const Navbar = () => {
     return (
-        <div className="flex justify-between items-center p-5">
-            <Link href="">
-                <p className="text-3xl font-bold"><span className="text-white">Version</span>Vault</p>
-            </Link>
-            <div className='flex font-bold'>
-                <Link href="" >
-                    Versions
+        <div className="flex w-full items-center p-3">
+            <div className="w-full text-center">
+                <Link href="">
+                    <p className="text-4xl font-bold"><span className="text-white">Version</span>Vault</p>
                 </Link>
-                <Link className='px-2' href="https://github.com/baxy5/VersionVault" target="_blank">
-                    Github
-                </Link>
-                <Image className='cursor-pointer' src="/theme.png" width="25" height="25" alt="theme-icon" />
             </div>
+            <Image className='cursor-pointer' src="/theme.png" width="25" height="25" alt="theme-icon" />
         </div>
     )
 }
