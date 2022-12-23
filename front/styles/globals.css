@@ -9,3 +9,8 @@ body {
   color: #9340ff;
   box-sizing: border-box;
 }
+
+::selection {
+  color: #101728;
+  background: #9340ffbe;
+}
