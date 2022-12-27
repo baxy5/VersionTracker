@@ -3,7 +3,6 @@ import Image from "next/image"
 
 export const Navbar = () => {
     return (
-        // TODO: Theme switcher
         <div className="flex w-full items-center p-3">
             <div className="w-full text-center">
                 <Link href="">

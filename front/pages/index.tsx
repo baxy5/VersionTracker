@@ -8,6 +8,8 @@ const roboto = Roboto({
   style: "normal"
 })
 
+// TODO: Theme switcher
+
 export default function Home() {
   return (
     <div className={`${roboto.className}`} >

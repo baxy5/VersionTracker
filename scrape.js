@@ -1,5 +1,11 @@
-import fetch from "node-fetch";
-import cheerio from "cheerio";
+/* import fetch from "node-fetch"; */
+/* import cheerio from "cheerio"; */
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+const cheerio = require("cheerio");
+
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 const getRawData = (URL) => {
   return fetch(URL)
@@ -51,9 +57,9 @@ const getNextjsVersion = async () => {
 
   const parsedData = cheerio.load(data);
 
-  // TODO: Extract data from this h3, the version already found
-  const version = parsedData("h3")[1].children[0];
-  console.log(version);
+  const version = parsedData("h3")[1].children[0].children[0].data;
+  const versionSplitted = version.split(" ");
+  console.log(versionSplitted[1]);
 };
 
 getNodeLtsVersion();
