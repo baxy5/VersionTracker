@@ -1,5 +1,3 @@
-/* import fetch from "node-fetch"; */
-/* import cheerio from "cheerio"; */
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const cheerio = require("cheerio");
@@ -15,6 +13,8 @@ const getRawData = (URL) => {
     });
 };
 
+//TODO: Rebuild database with proper structure
+
 const nodejs_lts_url = "https://nodejs.org/en/download/";
 const nodejs_latest_url = "https://nodejs.org/en/download/current/";
 const strapi_url = "https://strapi.io/changelog";
@@ -28,6 +28,13 @@ const getNodeLtsVersion = async () => {
 
   const version = parsedData("strong")[0].children[0].data;
   console.log(version);
+
+  await prisma.technology.create({
+    data: {
+      name: "NodeJS(LTS)",
+      version: version,
+    },
+  });
 };
 
 // NodeJs Latest

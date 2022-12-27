@@ -7,9 +7,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Technology {
-  id        Int    @id @default(autoincrement())
-  name      String @unique
+model technology {
+  id        Int     @id @default(autoincrement())
+  name      String  @unique
   version   String
-  published String
+  published String?
 }
