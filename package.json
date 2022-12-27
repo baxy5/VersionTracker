@@ -1,10 +1,9 @@
 {
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "node-fetch": "^3.3.0"
-  },
-  "type": "commonjs",
-  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0",
     "prisma": "^4.8.0"
-  }
+  },
+  "type": "commonjs"
 }
