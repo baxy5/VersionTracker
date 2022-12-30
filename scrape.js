@@ -13,8 +13,6 @@ const getRawData = (URL) => {
     });
 };
 
-//TODO: Rebuild database with proper structure
-
 const nodejs_lts_url = "https://nodejs.org/en/download/";
 const nodejs_latest_url = "https://nodejs.org/en/download/current/";
 const strapi_url = "https://strapi.io/changelog";
@@ -33,6 +31,7 @@ const getNodeLtsVersion = async () => {
     data: {
       name: "NodeJS(LTS)",
       version: version,
+      link: "asd",
     },
   });
 };

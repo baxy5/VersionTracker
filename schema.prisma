@@ -11,5 +11,6 @@ model technology {
   id        Int     @id @default(autoincrement())
   name      String  @unique
   version   String
+  link      String
   published String?
 }
