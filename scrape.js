@@ -25,13 +25,13 @@ const getNodeLtsVersion = async () => {
   const parsedData = cheerio.load(data);
 
   const version = parsedData("strong")[0].children[0].data;
-  console.log(version);
+  console.log("NodeJS(LTS) version scrapped.");
 
   await prisma.technology.create({
     data: {
       name: "NodeJS(LTS)",
       version: version,
-      link: "asd",
+      link: nodejs_lts_url,
     },
   });
 };
@@ -43,7 +43,15 @@ const getNodeLatestVersion = async () => {
   const parsedData = cheerio.load(data);
 
   const version = parsedData("strong")[0].children[0].data;
-  console.log(version);
+  console.log("NodeJS(Latest) version scrapped.");
+
+  await prisma.technology.create({
+    data: {
+      name: "NodeJS(Latest)",
+      version: version,
+      link: nodejs_latest_url,
+    },
+  });
 };
 
 // Strapi
@@ -54,7 +62,15 @@ const getStrapiVersion = async () => {
 
   const version = parsedData("h3")[0].children[0].data;
   const versionSplitted = version.split(" ");
-  console.log(versionSplitted[1]);
+  console.log("Strapi version scrapped.");
+
+  await prisma.technology.create({
+    data: {
+      name: "Strapi",
+      version: versionSplitted[1],
+      link: "https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project",
+    },
+  });
 };
 
 // NextJs
@@ -64,8 +80,18 @@ const getNextjsVersion = async () => {
   const parsedData = cheerio.load(data);
 
   const version = parsedData("h3")[1].children[0].children[0].data;
+  const link = parsedData("h3")[1].children[0].attribs.href;
   const versionSplitted = version.split(" ");
-  console.log(versionSplitted[1]);
+
+  console.log("NextJS version scrapped.");
+
+  await prisma.technology.create({
+    data: {
+      name: "NextJS",
+      version: versionSplitted[1],
+      link: `https://nextjs.org${link}`,
+    },
+  });
 };
 
 getNodeLtsVersion();
