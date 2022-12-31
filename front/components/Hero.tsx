@@ -12,12 +12,11 @@ const Hero = () => {
                 <div className="w-[450px] text-center sm:w-[600px] lg:text-left">
                     <h1>Welcome to VersionVault</h1>
                     <h1 className='text-5xl text-white pb-3 xl:text-7xl'>
-                        Version tracker for developers in one place.
+                        Version tracker for developers all around the world in one place.
                     </h1>
                     <p className='text-lg text-white italic'>Keep up the pace with your favourite techonology changes.</p>
                 </div>
             </div>
-
         </div>
     )
 }
