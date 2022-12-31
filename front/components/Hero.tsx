@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Hero = () => {
     return (
-        <div className="lg:flex lg:items-center lg:justify-around flex-row-reverse lg:pt-20">
+        <div className="bg-hero-bg lg:flex lg:items-center lg:justify-around flex-row-reverse lg:pt-20">
 
             <div className="hero-img flex justify-center items-center py-10">
                 <Image src="/hero-image.png" width="600" height="600" alt="Hero Image" />
