@@ -2,7 +2,7 @@ import { ContentBox } from "./index"
 
 const Content = () => {
     return (
-        <div className="">
+        <div>
             <ContentBox />
         </div>
     )
