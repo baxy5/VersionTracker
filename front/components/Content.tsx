@@ -1,8 +1,10 @@
-import React from 'react'
+import { ContentBox } from "./index"
 
 const Content = () => {
     return (
-        <div>Content</div>
+        <div className="">
+            <ContentBox />
+        </div>
     )
 }
 

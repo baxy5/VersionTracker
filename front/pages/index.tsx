@@ -1,6 +1,6 @@
 import { Roboto } from '@next/font/google'
 
-import { Layout, Hero } from "../components/index"
+import { Layout, Hero, Content } from "../components/index"
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -15,7 +15,7 @@ export default function Home() {
     <div className={`${roboto.className}`} >
       <Layout>
         <Hero />
-        <div className="versiontracker"></div>
+        <Content />
       </Layout>
     </div >
   )
