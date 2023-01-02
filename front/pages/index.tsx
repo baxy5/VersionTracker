@@ -1,8 +1,11 @@
 import { GetServerSideProps } from 'next'
-import { Roboto } from '@next/font/google'
 
 import { Layout, Hero, Content } from "../components/index"
 
+const { PrismaClient } = require("@prisma/client")
+const prisma = new PrismaClient()
+
+import { Roboto } from '@next/font/google'
 const roboto = Roboto({
   subsets: ['latin'],
   weight: "300",
@@ -10,8 +13,9 @@ const roboto = Roboto({
 })
 
 // TODO: Theme switcher
+// TODO: data type
 
-export default function Home() {
+export default function Home({ data }: any) {
   return (
     <div className={`${roboto.className}`} >
       <Layout>
@@ -21,4 +25,16 @@ export default function Home() {
     </div >
   )
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const data: any[] = await prisma.technology.findMany()
+
+  return {
+    props: {
+      data
+    }
+  }
+}
+
+
 
