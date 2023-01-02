@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next'
 import { Roboto } from '@next/font/google'
 
 import { Layout, Hero, Content } from "../components/index"
@@ -20,3 +21,4 @@ export default function Home() {
     </div >
   )
 }
+

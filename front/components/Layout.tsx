@@ -1,5 +1,5 @@
 import { Navbar, Footer } from "./index"
-import Children from "../interfaces/children"
+import { Children } from "../types/children"
 
 const Layout = ({ children }: Children) => {
     return (

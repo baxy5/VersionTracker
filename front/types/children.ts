@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
 
-export default interface Children {
+export type Children = {
     children: ReactNode
 }
