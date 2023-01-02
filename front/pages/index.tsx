@@ -2,6 +2,8 @@ import { GetServerSideProps } from 'next'
 
 import { Layout, Hero, Content } from "../components/index"
 
+import { Data } from "../types/data"
+
 const { PrismaClient } = require("@prisma/client")
 const prisma = new PrismaClient()
 
@@ -13,7 +15,7 @@ const roboto = Roboto({
 })
 
 // TODO: Theme switcher
-// TODO: data type
+
 
 export default function Home({ data }: any) {
   return (
@@ -27,7 +29,7 @@ export default function Home({ data }: any) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const data: any[] = await prisma.technology.findMany()
+  const data: Data[] = await prisma.technology.findMany()
 
   return {
     props: {
