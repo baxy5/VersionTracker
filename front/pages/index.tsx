@@ -17,7 +17,7 @@ const roboto = Roboto({
 // TODO: Theme switcher
 
 
-export default function Home({ data }: any) {
+export default function Home({ data }: { data: Data[] }) {
   return (
     <div className={`${roboto.className}`} >
       <Layout>
