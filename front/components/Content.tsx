@@ -12,4 +12,5 @@ const Content = ({ data }: any) => {
     )
 }
 
+
 export default Content
