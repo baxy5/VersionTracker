@@ -1,9 +1,9 @@
 import { ContentBox } from "./index"
 
-const Content = () => {
+const Content = ({ data }: any) => {
     return (
         <div>
-            <ContentBox />
+            <ContentBox data={data} />
         </div>
     )
 }

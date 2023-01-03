@@ -1,5 +1,5 @@
 export type Data = {
-    id?: number,
+    id: number,
     name: string,
     version: string,
     link: string,

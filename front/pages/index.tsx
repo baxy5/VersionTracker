@@ -16,19 +16,18 @@ const roboto = Roboto({
 
 // TODO: Theme switcher
 
-
 export default function Home({ data }: { data: Data[] }) {
   return (
     <div className={`${roboto.className}`} >
       <Layout>
         <Hero />
-        <Content />
+        <Content data={data} />
       </Layout>
     </div >
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<{ data: Data[] }> = async () => {
   const data: Data[] = await prisma.technology.findMany()
 
   return {
