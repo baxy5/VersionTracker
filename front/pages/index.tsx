@@ -13,7 +13,6 @@ const roboto = Roboto({
   weight: "300",
   style: "normal"
 })
-
 // TODO: Theme switcher
 
 export default function Home({ data }: { data: Data[] }) {
